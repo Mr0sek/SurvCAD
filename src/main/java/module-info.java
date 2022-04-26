@@ -5,4 +5,8 @@ module net.osek.survcad {
 
     opens net.osek.survcad to javafx.fxml;
     exports net.osek.survcad;
+    exports net.osek.survcad.menu;
+    opens net.osek.survcad.menu to javafx.fxml;
+    exports net.osek.survcad.menu.toolbars;
+    opens net.osek.survcad.menu.toolbars to javafx.fxml;
 }
