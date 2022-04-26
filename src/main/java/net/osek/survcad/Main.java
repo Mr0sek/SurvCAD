@@ -18,6 +18,7 @@ public class Main extends Application {
     private static Main mainClass;
 
     private ToolbarMenu toolbarMenu;
+    private VBox toolbarMenuPane;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -30,9 +31,8 @@ public class Main extends Application {
         // Basic layout, with menubar, sidebars, bottombar and center-layout
         BorderPane mainPane = new BorderPane();
 
+        toolbarMenuPane = new VBox();
         toolbarMenu = new ToolbarMenu();
-        HBox toolbarMenuPane = new HBox();
-        toolbarMenuPane.getChildren().addAll(toolbarMenu);
 
         VBox menuPane = new VBox();
         menuPane.getChildren().addAll(toolbarMenuPane);
@@ -62,7 +62,6 @@ public class Main extends Application {
 
 
         // DXF Test
-
     }
 
     public static void main(String[] args) {
@@ -76,6 +75,9 @@ public class Main extends Application {
 
     public ToolbarMenu getToolbarMenu() {
         return toolbarMenu;
+    }
+    public VBox getToolbarMenuPane() {
+        return toolbarMenuPane;
     }
 
     public static Main getMainClass() {
