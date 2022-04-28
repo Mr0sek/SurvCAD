@@ -1,8 +1,8 @@
 package net.osek.survcad.menu.toolbars;
 
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import net.osek.survcad.Main;
+import net.osek.survcad.menu.ToolBlock;
 import net.osek.survcad.menu.ToolbarMenuButton;
 import net.osek.survcad.styles.Colors;
 
@@ -15,6 +15,7 @@ import net.osek.survcad.styles.Colors;
 
 public class Toolbar extends HBox {
 
+    public static final int TOOL_CELL_SIZE = 40;    // size of a SMALL tool in px
     private ToolbarMenuButton menuButton;    // button in the toolbarMenu
 
     private boolean isActive;
@@ -24,8 +25,7 @@ public class Toolbar extends HBox {
 
         isActive = false;
 
-        setStyles();
-    }
+        setStyles();}
 
     private void setStyles() {
         this.setStyle(
@@ -33,7 +33,7 @@ public class Toolbar extends HBox {
                         "-fx-border-color: " + Colors.BORDER_COLOR.getColor() + ";" +
                         "-fx-border-width: 1px; -fx-border-style: solid none;" +
                         "-fx-border-radius: 0px; -fx-background-radius: 0px;" +
-                        "-fx-pref-height: 150px"
+                        "-fx-max-height: " + TOOL_CELL_SIZE*3
         );
     }
 

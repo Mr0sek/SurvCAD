@@ -1,7 +1,9 @@
 package net.osek.survcad;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.geometry.Point3D;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -9,6 +11,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+import net.osek.survcad.embeddedDB.Database;
 import net.osek.survcad.menu.ToolbarMenu;
 
 import java.util.Objects;
@@ -17,12 +21,17 @@ public class Main extends Application {
 
     private static Main mainClass;
 
+    private Database interDatabase;
+
     private ToolbarMenu toolbarMenu;
     private VBox toolbarMenuPane;
 
     @Override
     public void start(Stage stage) throws Exception {
         mainClass = this;
+
+        // database
+        interDatabase = new Database();
 
         // get Screen sizes
         ObservableList<Screen> screenSizes = Screen.getScreens();
@@ -56,26 +65,30 @@ public class Main extends Application {
         OrthogonalCamera camera = new OrthogonalCamera();
         scene.setCamera(camera);
 
-        stage.setTitle("Hello!");
+        stage.setTitle("SurvCAD");
         stage.setScene(scene);
         stage.show();
 
+        // listener
+        stage.setOnCloseRequest(event -> {
+            // close database
+            interDatabase.close();
 
-        // DXF Test
+            // shut down system
+            Platform.exit();
+            System.exit(0);
+        });
     }
 
     public static void main(String[] args) {
         launch();
     }
 
-    private static void testPoints() {
-        Point3D p1 = new Point3D(0,0,0);
-        Point3D p2 = new Point3D(1,1,1);
-    }
 
     public ToolbarMenu getToolbarMenu() {
         return toolbarMenu;
     }
+
     public VBox getToolbarMenuPane() {
         return toolbarMenuPane;
     }
