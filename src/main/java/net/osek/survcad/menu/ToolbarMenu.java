@@ -1,6 +1,7 @@
 package net.osek.survcad.menu;
 
 import javafx.scene.layout.HBox;
+import net.osek.survcad.Main;
 import net.osek.survcad.menu.toolbars.DrawToolbar;
 import net.osek.survcad.menu.toolbars.StartToolbar;
 import net.osek.survcad.menu.toolbars.Toolbar;
@@ -42,14 +43,17 @@ public class ToolbarMenu extends HBox {
         // add all menu buttons to the horizontal box
         this.getChildren().addAll(menuButtons);
 
+        // add this HBox itself to the topPane of the programm
+        Main.getMainClass().getToolbarMenuPane().getChildren().add(this);
+
         // make all toolbars invisible, but the StartToolbar
-        toolbars.forEach(toolbar -> {toolbar.setVisible(false);});
-        start.setVisible(true);
+        toolbars.forEach(toolbar -> {toolbar.setActive(false);});
+        start.setActive(true);
     }
 
     public void onMenuButtonClicked(Toolbar toolbar) {
         // set toolbar as active
-        toolbars.forEach(tb -> {tb.setVisible(false);});
-        toolbar.setVisible(true);
+        toolbars.forEach(tb -> {tb.setActive(false);});
+        toolbar.setActive(true);
     }
 }
