@@ -1,10 +1,9 @@
 package net.osek.survcad.menu;
 
 import javafx.scene.layout.GridPane;
+import net.osek.survcad.menu.toolbars.Toolbar;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.function.Consumer;
 
 public class ToolBlock extends GridPane {
 
@@ -12,10 +11,12 @@ public class ToolBlock extends GridPane {
 
     public ToolBlock(String name) {
         super();
+
+        setStyle();
     }
 
     // cellOccupancy: [height][lenght]
-    public void fillWithTools (long[][] cellOccupancy)  {
+    public void fillWithTools (int[][] cellOccupancy)  {
         // go through matrix, to find out, where what button is placed and what size it has
         int nHeight = 0; int nLength = 0;
 
@@ -24,7 +25,7 @@ public class ToolBlock extends GridPane {
         fillWithTools(nHeight, nLength, cellOccupancy, placedList);
     }
 
-    private void fillWithTools(int nHeight, int nLength, long[][] cellOccupancy, ArrayList<Integer> placedList) {
+    private void fillWithTools(int nHeight, int nLength, int[][] cellOccupancy, ArrayList<Integer> placedList) {
         // check, if height or length is out of limit
         if(nHeight >= cellOccupancy.length) {
             fillWithTools(0, nLength+1, cellOccupancy, placedList);
@@ -101,5 +102,12 @@ public class ToolBlock extends GridPane {
         }
 
         this.add(new Tool(this, toolSize, cellOccupancy[nHeight][nLength]), nLength, nHeight, toolSize.ordinal()+1, toolSize.ordinal()+1);
+    }
+
+    private void setStyle() {
+        this.setStyle("" +
+                "-fx-hgap: " + Toolbar.TOOL_GAP + "px; -fx-vgap: " + Toolbar.TOOL_GAP +"px;" +
+                "-fx-padding: " + (Toolbar.TOOL_GAP /2) + "px;"
+        );
     }
 }

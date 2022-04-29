@@ -4,6 +4,7 @@ module net.osek.survcad {
     requires javafx.controls;
     requires org.apache.derby.engine;
     requires org.apache.derby.tools;
+    requires java.desktop;
 
 
     opens net.osek.survcad to javafx.fxml;

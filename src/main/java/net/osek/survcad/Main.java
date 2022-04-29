@@ -3,25 +3,20 @@ package net.osek.survcad;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
-import javafx.geometry.Point3D;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import net.osek.survcad.embeddedDB.Database;
 import net.osek.survcad.menu.ToolbarMenu;
-
-import java.util.Objects;
 
 public class Main extends Application {
 
     private static Main mainClass;
 
-    private Database interDatabase;
+    private Database internDatabase;
 
     private ToolbarMenu toolbarMenu;
     private VBox toolbarMenuPane;
@@ -31,7 +26,7 @@ public class Main extends Application {
         mainClass = this;
 
         // database
-        interDatabase = new Database();
+        internDatabase = new Database();
 
         // get Screen sizes
         ObservableList<Screen> screenSizes = Screen.getScreens();
@@ -72,7 +67,7 @@ public class Main extends Application {
         // listener
         stage.setOnCloseRequest(event -> {
             // close database
-            interDatabase.close();
+            internDatabase.close();
 
             // shut down system
             Platform.exit();
@@ -91,6 +86,10 @@ public class Main extends Application {
 
     public VBox getToolbarMenuPane() {
         return toolbarMenuPane;
+    }
+
+    public Database getInternDatabase() {
+        return internDatabase;
     }
 
     public static Main getMainClass() {

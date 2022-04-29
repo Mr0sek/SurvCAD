@@ -9,6 +9,7 @@ public enum Colors {
     MENU_BAR_TEXT_COLOR_HOVER("#f6fafb"),
 
     TOOLBAR_BACKGROUND_COLOR("#f6fafb"),
+    TOOLBAR_TEXT_COLOR("#08092e"),
 
     BORDER_COLOR("#08091a");
 

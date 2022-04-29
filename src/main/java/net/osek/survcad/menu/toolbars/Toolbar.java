@@ -2,7 +2,6 @@ package net.osek.survcad.menu.toolbars;
 
 import javafx.scene.layout.HBox;
 import net.osek.survcad.Main;
-import net.osek.survcad.menu.ToolBlock;
 import net.osek.survcad.menu.ToolbarMenuButton;
 import net.osek.survcad.styles.Colors;
 
@@ -15,7 +14,9 @@ import net.osek.survcad.styles.Colors;
 
 public class Toolbar extends HBox {
 
-    public static final int TOOL_CELL_SIZE = 40;    // size of a SMALL tool in px
+    private static final int TOOL_CELL_SIZE = 18;    // size of a SMALL tool in px
+    public static final int TOOL_GAP = 10;           // HGap and VGap between toolbuttons in px
+
     private ToolbarMenuButton menuButton;    // button in the toolbarMenu
 
     private boolean isActive;
@@ -32,8 +33,7 @@ public class Toolbar extends HBox {
                 "-fx-background-color: " + Colors.TOOLBAR_BACKGROUND_COLOR.getColor() + ";" +
                         "-fx-border-color: " + Colors.BORDER_COLOR.getColor() + ";" +
                         "-fx-border-width: 1px; -fx-border-style: solid none;" +
-                        "-fx-border-radius: 0px; -fx-background-radius: 0px;" +
-                        "-fx-max-height: " + TOOL_CELL_SIZE*3
+                        "-fx-border-radius: 0px; -fx-background-radius: 0px;"
         );
     }
 
@@ -60,5 +60,9 @@ public class Toolbar extends HBox {
 
     public ToolbarMenuButton getMenuButton() {
         return menuButton;
+    }
+
+    public static int getToolCellSize() {
+        return TOOL_CELL_SIZE;
     }
 }

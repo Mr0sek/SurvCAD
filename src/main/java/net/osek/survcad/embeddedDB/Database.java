@@ -1,6 +1,12 @@
 package net.osek.survcad.embeddedDB;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.IOException;
 import java.sql.*;
+import java.util.Base64;
+import javax.imageio.ImageIO;
 
 public class Database {
 
@@ -25,11 +31,12 @@ public class Database {
 
         } catch (SQLException ex) {
 
-            System.out.println("in connection" + ex);
+            ex.printStackTrace();
         } catch (ClassNotFoundException e) {
 
             throw new RuntimeException(e);
         }
+
     }
 
     public void close () {
@@ -43,5 +50,19 @@ public class Database {
                 System.err.println(ex.getMessage());
             }
         }
+    }
+
+    // load image from database by ID
+    public String getButtonImagePath(int id) throws SQLException, IOException, NoEntryException {
+
+        rs = stmt.executeQuery("SELECT * FROM \"TOOLS_IMAGES\" WHERE \"TOOL_id\" = " + id );
+
+        // get data from database
+        if(!rs.next()) {
+            throw new NoEntryException("TOOLS_IMAGES", "TOOL_id", ""+id);
+        }
+
+        String imgData = rs.getString("TOOL_img").toString();
+        return imgData;
     }
 }
