@@ -32,7 +32,7 @@ public class Toolbar extends HBox {
         this.setStyle(
                 "-fx-background-color: " + Colors.TOOLBAR_BACKGROUND_COLOR.getColor() + ";" +
                         "-fx-border-color: " + Colors.BORDER_COLOR.getColor() + ";" +
-                        "-fx-border-width: 1px; -fx-border-style: solid none;" +
+                        "-fx-border-width: 1px; -fx-border-style: hidden hidden solid hidden;" +
                         "-fx-border-radius: 0px; -fx-background-radius: 0px;"
         );
     }

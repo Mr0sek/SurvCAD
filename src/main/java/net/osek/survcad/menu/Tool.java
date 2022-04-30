@@ -52,7 +52,7 @@ public class Tool extends Button {
                     "-fx-max-width: " + pxSize + "px; -fx-min-width: " + pxSize + "px;" +
                     "-fx-background-color: " + Colors.TOOLBAR_BACKGROUND_COLOR.getColor() + ";" +
                     "-fx-background-image: " + bgImgString + ";" +
-                    "-fx-background-size: cover; -fx-background-position: center; -fx-background-repeat: no-repeat;"
+                    "-fx-background-size: contain; -fx-background-position: center; -fx-background-repeat: no-repeat;"
             );
         }
     }

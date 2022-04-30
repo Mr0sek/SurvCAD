@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="SurvCAD">
+    <output-path>$PROJECT_DIR$/out/artifacts/SurvCAD</output-path>
+    <root id="archive" name="SurvCAD.jar">
+      <element id="archive" name="SurvCAD.jar">
+        <element id="module-output" name="SurvCAD" />
+      </element>
+    </root>
+  </artifact>
+</component>

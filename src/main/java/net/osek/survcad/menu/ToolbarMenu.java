@@ -1,10 +1,13 @@
 package net.osek.survcad.menu;
 
+import javafx.scene.layout.Background;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import net.osek.survcad.Main;
 import net.osek.survcad.menu.toolbars.DrawToolbar;
 import net.osek.survcad.menu.toolbars.StartToolbar;
 import net.osek.survcad.menu.toolbars.Toolbar;
+import net.osek.survcad.styles.Colors;
 
 import java.util.ArrayList;
 import java.util.function.Consumer;
@@ -28,6 +31,8 @@ public class ToolbarMenu extends HBox {
         toolbars = new ArrayList<>();
         toolbars.add(start);
         toolbars.add(draw);
+
+        setStyle();
 
         // menuButtons are the buttons to choose a toolbar category
         // add them to this list
@@ -55,5 +60,13 @@ public class ToolbarMenu extends HBox {
         // set toolbar as active
         toolbars.forEach(tb -> {tb.setActive(false);});
         toolbar.setActive(true);
+    }
+
+    private void setStyle () {
+        this.setStyle("" +
+                "-fx-background-color: " + Colors.MENU_BAR_BACKGROUND_INACTIVE.getColor() + ";" +
+                "-fx-border-color: " + Colors.BORDER_COLOR.getColor() + ";" +
+                "-fx-border-width: 1px; -fx-border-style: hidden hidden solid hidden;"
+        );
     }
 }

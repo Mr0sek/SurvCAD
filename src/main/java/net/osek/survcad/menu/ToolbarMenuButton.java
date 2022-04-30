@@ -14,7 +14,7 @@ public class ToolbarMenuButton extends Button {
     private Toolbar toolbar;
 
     public ToolbarMenuButton(String name, Toolbar toolbar) {
-        super(name);
+        super("  " + name + "  ");
 
         this.toolbar = toolbar;
 
@@ -33,7 +33,9 @@ public class ToolbarMenuButton extends Button {
         this.setStyle(
                 "-fx-background-color: " + Colors.MENU_BAR_BACKGROUND_INACTIVE.getColor() + ";" +
                         "-fx-text-fill: " + Colors.MENU_BAR_TEXT_COLOR_INACTIVE.getColor() + ";" +
-                        "-fx-border-radius: 0px; -fx-background-radius: 0px;"
+                        "-fx-start-margin: 0px; -fx-padding: 3px; -fx-border-radius: 0px; -fx-font-size: 12px;" +
+                        " -fx-background-radius: 0px; -fx-border-width: 0px 0px 3px 0px; -fx-border-style: hidden;" +
+                        "-fx-min-width: 80px;"
         );
 
         // hover style
@@ -42,7 +44,9 @@ public class ToolbarMenuButton extends Button {
                 this.setStyle(
                         "-fx-background-color: " + Colors.MENU_BAR_BACKGROUND_HOVER.getColor() + ";" +
                                 "-fx-text-fill: " + Colors.MENU_BAR_TEXT_COLOR_HOVER.getColor() + ";" +
-                                "-fx-border-radius: 0px; -fx-background-radius: 0px;"
+                                "-fx-start-margin: 0px; -fx-border-radius: 0px; -fx-background-radius: 0px;" +
+                                "-fx-padding: 3px; -fx-border-width: 0px 0px 3px 0px; -fx-border-style: hidden;" +
+                                "-fx-font-size: 12px; -fx-min-width: 80px;"
                 );
         });
 
@@ -52,7 +56,9 @@ public class ToolbarMenuButton extends Button {
                 this.setStyle(
                         "-fx-background-color: " + Colors.MENU_BAR_BACKGROUND_INACTIVE.getColor() + ";" +
                                 "-fx-text-fill: " + Colors.MENU_BAR_TEXT_COLOR_INACTIVE.getColor() + ";" +
-                                "-fx-border-radius: 0px; -fx-background-radius: 0px;"
+                                "-fx-start-margin: 0px; -fx-border-radius: 0px; -fx-background-radius: 0px;" +
+                                "-fx-padding: 3px; -fx-border-width: 0px 0px 3px 0px; -fx-border-style: hidden;" +
+                                "-fx-font-size: 12px; -fx-min-width: 80px;"
                 );
         });
     }
@@ -62,7 +68,11 @@ public class ToolbarMenuButton extends Button {
         this.setStyle(
                 "-fx-background-color: " + Colors.MENU_BAR_BACKGROUND_ACTIVE.getColor() + ";" +
                         "-fx-text-fill: " + Colors.MENU_BAR_TEXT_COLOR_ACTIVE.getColor() + ";" +
-                        "-fx-border-radius: 0px; -fx-background-radius: 0px;"
+                        "-fx-font-size: 12px;" +
+                        "-fx-border-width: 0px 0px 3px 0px; -fx-border-style: hidden hidden solid hidden; " +
+                        "-fx-border-color: " + Colors.MENU_BAR_BORDER_ACTIVE.getColor() + ";" +
+                        "-fx-background-radius: 0px; -fx-border-radius: 0px; " +
+                        "-fx-start-margin: 0px; -fx-padding: 3px; -fx-min-width: 80px;"
         );
     }
 
@@ -71,7 +81,9 @@ public class ToolbarMenuButton extends Button {
         this.setStyle(
                 "-fx-background-color: " + Colors.MENU_BAR_BACKGROUND_INACTIVE.getColor() + ";" +
                         "-fx-text-fill: " + Colors.MENU_BAR_TEXT_COLOR_INACTIVE.getColor() + ";" +
-                        "-fx-border-radius: 0px; -fx-background-radius: 0px;"
+                        "-fx-start-margin: 0px; -fx-border-radius: 0px; -fx-background-radius: 0px;" +
+                        "-fx-padding: 3px; -fx-border-width: 0px 0px 3px 0px; -fx-border-style: hidden;" +
+                        "-fx-font-size: 12px; -fx-min-width: 80px;"
         );
     }
 }

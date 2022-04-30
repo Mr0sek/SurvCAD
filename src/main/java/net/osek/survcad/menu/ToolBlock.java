@@ -2,6 +2,7 @@ package net.osek.survcad.menu;
 
 import javafx.scene.layout.GridPane;
 import net.osek.survcad.menu.toolbars.Toolbar;
+import net.osek.survcad.styles.Colors;
 
 import java.util.ArrayList;
 
@@ -107,7 +108,9 @@ public class ToolBlock extends GridPane {
     private void setStyle() {
         this.setStyle("" +
                 "-fx-hgap: " + Toolbar.TOOL_GAP + "px; -fx-vgap: " + Toolbar.TOOL_GAP +"px;" +
-                "-fx-padding: " + (Toolbar.TOOL_GAP /2) + "px;"
+                "-fx-padding: " + (Toolbar.TOOL_GAP /2) + "px;" +
+                "-fx-border-width: 1px; -fx-border-color: " + Colors.BORDER_COLOR.getColor() + ";" +
+                "-fx-border-style: hidden solid hidden solid; -fx-border-insets: 5px;"
         );
     }
 }

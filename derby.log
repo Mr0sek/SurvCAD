@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Fri Apr 29 13:03:04 CEST 2022:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0180-74fd-11ff-00001f4b8948 
-on database directory C:\Users\Mr. Osek\IdeaProjects\SurvCAD\src\main\java\net\osek\survcad\embeddedDB\internDB\internDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5b6f7412 
-Loaded from file:/C:/Users/Mr.%20Osek/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
+Sat Apr 30 13:59:59 CEST 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0180-7a57-8af4-00000f2a14e0 
+on database directory /Users/lukasmrosek/Documents/Engineering/SurvCAD.nosync/Software/SurvCAD/src/main/java/net/osek/survcad/embeddedDB/internDB/internDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@4a574795 
+Loaded from file:/Users/lukasmrosek/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
 java.vendor=Oracle Corporation
 java.runtime.version=18.0.1+10-24
-user.dir=C:\Users\Mr. Osek\IdeaProjects\SurvCAD
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
+user.dir=/Users/lukasmrosek/Documents/Engineering/SurvCAD.nosync/Software/SurvCAD
+os.name=Mac OS X
+os.arch=x86_64
+os.version=11.6.5
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
