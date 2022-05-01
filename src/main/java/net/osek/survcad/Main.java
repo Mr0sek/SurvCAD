@@ -10,7 +10,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import net.osek.survcad.embeddedDB.Database;
-import net.osek.survcad.menu.ToolbarMenu;
+import net.osek.survcad.topPane.menu.ToolbarMenu;
 
 public class Main extends Application {
 
@@ -38,8 +38,6 @@ public class Main extends Application {
         toolbarMenuPane = new VBox();
         toolbarMenu = new ToolbarMenu();
 
-        VBox menuPane = new VBox();
-        menuPane.getChildren().addAll(toolbarMenuPane);
         VBox leftPane = new VBox();
         VBox rightPane = new VBox();
         HBox bottomPane = new HBox();
@@ -47,7 +45,7 @@ public class Main extends Application {
         DrawingPane centerPane = new DrawingPane();
         DrawingSubScene drawingScene = new DrawingSubScene(centerPane);
 
-        mainPane.setTop(menuPane);
+        mainPane.setTop(toolbarMenuPane);
         mainPane.setLeft(leftPane);
         mainPane.setRight(rightPane);
         mainPane.setBottom(bottomPane);
@@ -57,6 +55,10 @@ public class Main extends Application {
         // show window
         Scene scene = new Scene(mainPane, screenSizes.get(0).getBounds().getWidth(), screenSizes.get(0).getBounds().getHeight());
 
+        // styles.sass
+        scene.getStylesheets().add(getClass().getResource("/net/osek/survcad/styles.css").toExternalForm());
+
+        // camera
         OrthogonalCamera camera = new OrthogonalCamera();
         scene.setCamera(camera);
 

@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Sat Apr 30 13:59:59 CEST 2022:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0180-7a57-8af4-00000f2a14e0 
+Sun May 01 20:53:27 CEST 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0180-80f8-6f89-00000f3ed188 
 on database directory /Users/lukasmrosek/Documents/Engineering/SurvCAD.nosync/Software/SurvCAD/src/main/java/net/osek/survcad/embeddedDB/internDB/internDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@4a574795 
 Loaded from file:/Users/lukasmrosek/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
 java.vendor=Oracle Corporation
@@ -11,3 +11,9 @@ os.arch=x86_64
 os.version=11.6.5
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Sun May 01 20:53:48 CEST 2022: Shutting down Derby engine
+----------------------------------------------------------------
+Sun May 01 20:53:48 CEST 2022:
+Shutting down instance a816c00e-0180-80f8-6f89-00000f3ed188 on database directory /Users/lukasmrosek/Documents/Engineering/SurvCAD.nosync/Software/SurvCAD/src/main/java/net/osek/survcad/embeddedDB/internDB/internDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@4a574795 
+----------------------------------------------------------------
