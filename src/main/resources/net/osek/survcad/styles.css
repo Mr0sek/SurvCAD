@@ -11,7 +11,7 @@
     -fx-border-color: #edebeb;
     -fx-text-fill: #1e2018;
     -fx-text-alignment: center;
-    -fx-font-size: 12px;
+    -fx-font-size: 11px;
     -fx-start-margin: 0px;
     -fx-padding: 3px;
     -fx-border-radius: 0px;
@@ -22,8 +22,8 @@
 }
 
 .menu-button-inactive:hover {
-    -fx-background-color: #b4b5b4;
-    -fx-border-color: #b4b5b4;
+    -fx-background-color: #bdbdbf;
+    -fx-border-color: #bdbdbf;
 }
 
 
@@ -31,7 +31,7 @@
     -fx-background-color: #f8f8f9;
     -fx-border-color: #4c77df;
     -fx-text-fill: #1e2018;
-    -fx-font-size: 12px;
+    -fx-font-size: 11px;
     -fx-border-width: 0px 0px 3px 0px;
     -fx-border-style: solid;
     -fx-background-radius: 0px;
@@ -48,6 +48,35 @@
     -fx-border-style: hidden hidden solid hidden;
     -fx-border-radius: 0px;
     -fx-background-radius: 0px;
-    -fx-padding: 0px;
+    -fx-padding: -5px;
+}
+
+.function-bar {
+    -fx-background-color: #ededeb;
+    -fx-border-width: 0px;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
+}
+
+.function-button-active {
+    -fx-background-color: #b5b4b5;
+    -fx-text-fill: #000000;
+    -fx-font-size: 11px;
+    -fx-background-radius: 0px;
+    -fx-border-radius: 0px;
+    -fx-padding: 3px 12px;
+}
+
+.function-button-inactive {
+    -fx-background-color: #ededeb;
+    -fx-text-fill: #000000;
+    -fx-font-size: 11px;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
+    -fx-padding: 3px 12px;
+}
+
+.function-button-inactive:hover {
+    -fx-background-color: #cacbcc;
 }
 

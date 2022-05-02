@@ -1,6 +1,10 @@
 package net.osek.survcad.styles;
 
 public enum Colors {
+    BUTTON_CLICKED_DARK("#b5b4b5"),
+    BUTTON_HOVERD("#cacbcc"),
+    BUTTON("#ededeb"),
+
     MENU_BAR_BACKGROUND_ACTIVE("#f8f8f9"),
     MENU_BAR_BORDER_ACTIVE("#4c77df"),
     MENU_BAR_BACKGROUND_INACTIVE("#ededeb"),

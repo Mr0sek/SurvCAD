@@ -10,6 +10,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import net.osek.survcad.embeddedDB.Database;
+import net.osek.survcad.sidePanes.Facing;
+import net.osek.survcad.sidePanes.FunctionBar;
+import net.osek.survcad.styles.Colors;
 import net.osek.survcad.topPane.menu.ToolbarMenu;
 
 public class Main extends Application {
@@ -36,9 +39,12 @@ public class Main extends Application {
         BorderPane mainPane = new BorderPane();
 
         toolbarMenuPane = new VBox();
-        toolbarMenu = new ToolbarMenu();
+        toolbarMenu = new ToolbarMenu();    // adds itself to this.getChildren
 
-        VBox leftPane = new VBox();
+        FunctionBar functionBar = new FunctionBar(Facing.LEFT);
+
+        HBox leftPane = new HBox();
+        leftPane.getChildren().add(functionBar);
         VBox rightPane = new VBox();
         HBox bottomPane = new HBox();
 
