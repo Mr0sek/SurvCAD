@@ -80,3 +80,8 @@
     -fx-background-color: #cacbcc;
 }
 
+.function-window {
+    -fx-background-color: #f8f8f9;
+    -fx-pref-width: 150px;
+}
+

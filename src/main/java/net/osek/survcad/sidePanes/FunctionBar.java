@@ -9,32 +9,50 @@ public class FunctionBar extends Group {
 
     private Facing facing;
 
-    private HBox functionBar;
+    private final ArrayList<FunctionButton> functionButtons;
 
-    private ArrayList<FunctionButton> functionButtons;
+    private final HBox functionBar;
 
     public FunctionBar (Facing facing) {
         super();
 
         this.facing = facing;
 
-        functionBar = new HBox();
-
         functionButtons = new ArrayList<>();
 
-        functionButtons.add(new FunctionButton(2001, "test1", this));
-        functionButtons.add(new FunctionButton(2002, "Test2",  this));
+        functionBar = new HBox();
 
-        functionBar.getChildren().addAll(functionButtons);
-        functionBar.setRotate(facing == Facing.LEFT ? 270 : 90);
+
+        functionBar.setRotate(facing == Facing.TOP_LEFT || facing == Facing.BOTTOM_LEFT
+                ? 270 : 90);
 
         this.getChildren().add(functionBar);
 
         functionBar.getStyleClass().add("function-bar");
     }
 
-    public void functionButtonClicked (FunctionButton functionButton) {
-        functionButtons.forEach(fb -> {fb.setActive(false);});
-        functionButton.setActive(true);
+    public void addButton(FunctionButton functionButton) {
+        // add button
+        functionButtons.add(functionButton);
+        functionBar.getChildren().add(functionButton);
+
+        // listener for this button
+        functionButton.setOnMouseClicked(e -> {
+            functionButtons.forEach(fb -> {
+                if(!fb.equals(functionButton))
+                    // set all other buttons to inactive
+                    fb.setActive(false);
+            });
+
+            // set this to active, if it wasn't, and the other way around
+            functionButton.setActive(!functionButton.getIsActive());
+        });
+    }
+
+    public void removeButton(FunctionButton functionButton) {
+        if(functionButtons.contains(functionButton)) {
+            functionBar.getChildren().remove(functionButton);
+            functionButtons.remove(functionButton);
+        }
     }
 }

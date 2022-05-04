@@ -1,6 +1,8 @@
 package net.osek.survcad.sidePanes;
 
 public enum Facing {
-    LEFT,
-    RIGHT
+    TOP_LEFT,
+    BOTTOM_LEFT,
+    TOP_RIGHT,
+    BOTTOM_RIGHT
 }

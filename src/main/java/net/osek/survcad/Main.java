@@ -4,16 +4,16 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import net.osek.survcad.embeddedDB.Database;
 import net.osek.survcad.sidePanes.Facing;
 import net.osek.survcad.sidePanes.FunctionBar;
-import net.osek.survcad.styles.Colors;
+import net.osek.survcad.sidePanes.FunctionManager;
 import net.osek.survcad.topPane.menu.ToolbarMenu;
+
+import java.util.Objects;
 
 public class Main extends Application {
 
@@ -23,6 +23,8 @@ public class Main extends Application {
 
     private ToolbarMenu toolbarMenu;
     private VBox toolbarMenuPane;
+    private VBox functionBarLeftMenuPane;
+    private HBox functionBarLeftPane;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -33,18 +35,21 @@ public class Main extends Application {
 
         // get Screen sizes
         ObservableList<Screen> screenSizes = Screen.getScreens();
-        // Todo: Save screensetups in database
+        // Todo: Save screen setups in database
 
-        // Basic layout, with menubar, sidebars, bottombar and center-layout
+        // Basic layout, with menubar, sidebars, bottom bar and center-layout
         BorderPane mainPane = new BorderPane();
 
+        // toolbar (top)
         toolbarMenuPane = new VBox();
         toolbarMenu = new ToolbarMenu();    // adds itself to this.getChildren
 
-        FunctionBar functionBar = new FunctionBar(Facing.LEFT);
+        // function bars (left and right)
+        functionBarLeftPane = new HBox();            // the function pane on the left, containing the function window itself and
+        // initialize the functions manager
+        FunctionManager.initFunctionBars(functionBarLeftPane);
 
-        HBox leftPane = new HBox();
-        leftPane.getChildren().add(functionBar);
+
         VBox rightPane = new VBox();
         HBox bottomPane = new HBox();
 
@@ -52,7 +57,7 @@ public class Main extends Application {
         DrawingSubScene drawingScene = new DrawingSubScene(centerPane);
 
         mainPane.setTop(toolbarMenuPane);
-        mainPane.setLeft(leftPane);
+        mainPane.setLeft(functionBarLeftPane);
         mainPane.setRight(rightPane);
         mainPane.setBottom(bottomPane);
         mainPane.setCenter(drawingScene);
@@ -62,7 +67,12 @@ public class Main extends Application {
         Scene scene = new Scene(mainPane, screenSizes.get(0).getBounds().getWidth(), screenSizes.get(0).getBounds().getHeight());
 
         // styles.sass
-        scene.getStylesheets().add(getClass().getResource("/net/osek/survcad/styles.css").toExternalForm());
+        try {
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/net/osek/survcad/styles.css")).toExternalForm());
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+            // and ignore... for now
+        }
 
         // camera
         OrthogonalCamera camera = new OrthogonalCamera();

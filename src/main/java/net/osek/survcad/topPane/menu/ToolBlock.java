@@ -104,7 +104,7 @@ public class ToolBlock extends GridPane {
             fillWithTools(nHeight + 1, nLength, cellOccupancy, placedList);
         }
 
-        this.add(new Tool(this, toolSize, cellOccupancy[nHeight][nLength]), nLength, nHeight, toolSize.ordinal()+1, toolSize.ordinal()+1);
+        this.add(new ToolButton(this, toolSize, cellOccupancy[nHeight][nLength]), nLength, nHeight, toolSize.ordinal()+1, toolSize.ordinal()+1);
     }
 
     private void setStyle() {
