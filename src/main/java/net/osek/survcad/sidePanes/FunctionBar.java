@@ -27,8 +27,6 @@ public class FunctionBar extends Group {
                 ? 270 : 90);
 
         this.getChildren().add(functionBar);
-
-        functionBar.getStyleClass().add("function-bar");
     }
 
     public void addButton(FunctionButton functionButton) {

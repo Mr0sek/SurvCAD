@@ -46,14 +46,14 @@ public class ToolButton extends Button {
             this.setStyle("" +
                     "-fx-max-height: " + pxSize + "px; -fx-min-height: " + pxSize + "px;" +
                     "-fx-max-width: " + pxSize + "px; -fx-min-width: " + pxSize + "px;" +
-                    "-fx-background-color: " + Colors.TOOLBAR_BACKGROUND_COLOR.getColor()
+                    "-fx-background-color: " + Colors.BG_GREY_LIGHT.getColor()
             );
         } else {
             String bgImgString = "url(\"" + imgPath +"\")";
             this.setStyle("" +
                     "-fx-max-height: " + pxSize + "px; -fx-min-height: " + pxSize + "px;" +
                     "-fx-max-width: " + pxSize + "px; -fx-min-width: " + pxSize + "px;" +
-                    "-fx-background-color: " + Colors.TOOLBAR_BACKGROUND_COLOR.getColor() + ";" +
+                    "-fx-background-color: " + Colors.BG_GREY_LIGHT.getColor() + ";" +
                     "-fx-background-image: " + bgImgString + ";" +
                     "-fx-background-size: contain; -fx-background-position: center; -fx-background-repeat: no-repeat;"
             );
@@ -71,9 +71,7 @@ public class ToolButton extends Button {
         // load image from database
         try {
 
-            imgPath = StringUtil.fixUrlForCss(
-                    System.getProperty("user.dir") + "/" + Main.getMainClass().getInternDatabase().getButtonImagePath(internToolID)
-            );
+            imgPath = Main.getMainClass().getInternDatabase().getButtonImagePath(internToolID);
         } catch (SQLException | IOException e) {
             e.printStackTrace();
 

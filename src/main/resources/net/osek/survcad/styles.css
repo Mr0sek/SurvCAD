@@ -53,9 +53,12 @@
 
 .function-bar {
     -fx-background-color: #ededeb;
-    -fx-border-width: 0px;
+    -fx-border-color: #d4d3d7;
+    -fx-border-width: 1px;
     -fx-border-radius: 0px;
+    -fx-border-style: hidden solid hidden hidden;
     -fx-background-radius: 0px;
+    -fx-min-width: 23px;
 }
 
 .function-button-active {

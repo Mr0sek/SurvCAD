@@ -11,9 +11,9 @@ public class CreateProjectFunction extends Function {
         super(ToolIDs.CREATE_PROJECT, "Create project");
 
         // create function window
-        Label title = new Label("Create project");
-        Label desc_path = new Label("Please enter the path to your project");
+        //Label title = new Label("Create project");
+        //Label desc_path = new Label("Please enter the path to your project");
 
-        this.getChildren().addAll(title, desc_path);
+        //this.getChildren().addAll(title, desc_path);
     }
 }

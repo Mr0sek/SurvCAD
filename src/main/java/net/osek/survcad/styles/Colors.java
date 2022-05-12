@@ -16,7 +16,13 @@ public enum Colors {
     TOOLBAR_BACKGROUND_COLOR("#f8f8f9"),
     TOOLBAR_TEXT_COLOR("#1e2018"),
 
-    BORDER_COLOR("#d4d3d7");
+    BORDER_COLOR("#d4d3d7"),
+    TEXT_COLOR("#000000"),
+
+    BG_GREY_LIGHT("#ededeb"),
+    BG_GREY_HOVER("#cacbcc"),
+    BG_GREY_DARK("#b5b4b5");
+
 
     private String color;
 

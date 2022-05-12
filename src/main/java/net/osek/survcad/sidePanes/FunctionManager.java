@@ -20,6 +20,7 @@ public abstract class FunctionManager {
         topLeftFunctionBar = new FunctionBar(Facing.TOP_LEFT);
         bottomLeftFunctionBar = new FunctionBar(Facing.TOP_RIGHT);
         leftFunctionMenu.getChildren().addAll(topLeftFunctionBar, leftFunctionBarFiller, bottomLeftFunctionBar);
+        leftFunctionMenu.getStyleClass().add("function-bar");
 
         VBox leftFunctionWindow = new VBox();
         topLeftFunctionWindow = new FunctionWindow();

@@ -1,5 +1,8 @@
 package net.osek.survcad.embeddedDB;
 
+import net.osek.survcad.Main;
+import net.osek.survcad.utils.StringUtil;
+
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -63,6 +66,9 @@ public class Database {
         }
 
         String imgData = rs.getString("TOOL_img").toString();
-        return imgData;
+
+        // fix string
+        // load image from database
+        return StringUtil.fixUrlForCss(System.getProperty("user.dir") + "/" + imgData);
     }
 }
